@@ -6,6 +6,6 @@ function Header() {
                     <p>IT Student | Web Systems and Technologies</p>
              </header>
         </section>
-);
+    );
 }
 export default Header;

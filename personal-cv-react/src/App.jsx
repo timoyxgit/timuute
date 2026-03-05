@@ -1,5 +1,3 @@
-
-// ...existing code...
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Skills from "./Components/Skills";
@@ -10,14 +8,45 @@ import { useState } from "react";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
+  const skills = [
+    "Web Development",
+    "HTML",
+    "SQL",
+    "JavaScript",
+    "React"
+  ];
+
+  const education = [
+    {
+      year: "2028",
+      program: "BS Information Technology",
+      school: "USTP CDO Campus"
+    },
+    {
+      year: "2024",
+      program: "Computer System Servicing",
+      school: "Agusan Del Sur National Highschool"
+    },
+    {
+      year: "2021",
+      program: "Crack",
+      school: "Agusan Del Sur National Highschool"
+    },
+    {
+      year: "2016",
+      program: "KINGS",
+      school: "Light and Life Christian Learning Center"
+    },
+  ];
+
   return (
     <>
       <div className={darkMode ? "dark-mode" : ""}>
         <button onClick={() => setDarkMode(!darkMode)}>Toggle Dark Mode</button>
         <Header />
         <About />
-        <Skills />
-        <Education />
+        <Skills skills={skills} />
+        <Education education={education} />
         <Contact />
       </div>
     </>
