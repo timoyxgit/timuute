@@ -6,7 +6,18 @@ function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert(`Thank you ${name}!`);
+
+    fetch("http://localhost/cv-api/process.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name: name })
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.message);
+      });
   }
 
   return (
