@@ -4,6 +4,9 @@ import Skills from "./Components/Skills";
 import Education from "./Components/Education";
 import Contact from "./Components/Contact";
 import { useState } from "react";
+import ContactList from "./Components/ContactList"; 
+
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -47,7 +50,10 @@ function App() {
         <About />
         <Skills skills={skills} />
         <Education education={education} />
+
         <Contact />
+        <ContactList />
+        
       </div>
     </>
   );

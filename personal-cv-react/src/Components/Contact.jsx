@@ -6,20 +6,31 @@ function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+  
     fetch("http://localhost/cv-api/process.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name: name })
+      body: JSON.stringify({ 
+        name: name,
+        email: email
+      })
     })
       .then(res => res.json())
       .then(data => {
-        alert(data.message);
+        if (data.message) {
+          alert(data.message);
+        } else {
+          alert("Unexpected error occurred.");
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Failed to connect to server.");
       });
   }
-
+  
   return (
     <section className="card">
       <h2>Contact Me</h2>
